@@ -5,13 +5,24 @@ block content
   p Welcome to #{title}
 
   p#loading Finding your next meal...
-  ul#results
+  #place
+    img#place-image
+    h2#name
+    p#phone
+    p#distance
+  button#next Next
 
   script.
     window.onload = () => {
-      if("geolocation" in navigator) {
+      const card = document.getElementById('place');
+      const placeImg = document.getElementById('place-image');
+      const placeName = document.getElementById('name');
+      const placePhone = document.getElementById('phone');
+      const placeDistance = document.getElementById('distance');
+
+      if('geolocation' in navigator) {
       navigator.geolocation.getCurrentPosition(position => {
-        document.getElementById('loading').innerText = "All done!";
+        document.getElementById('loading').innerText = 'All done!';
         console.log(position.coords.latitude, position.coords.longitude);
 
         // Send Position Data to Server
@@ -20,13 +31,15 @@ block content
           if (this.readyState == 4 && this.status == 200) {
             let res = JSON.parse(this.responseText);
             console.log(res);
-            res.forEach(place => {
-              document.getElementById('results').innerHTML += `<li>${place.name}</li>`;
+            let i = 0;
+            showPlace(res, i);
+            document.getElementById('next').addEventListener('click', () => {
+              showPlace(res, i++);
             });
           }
         };
-        xhttp.open("POST", "", true);
-        xhttp.setRequestHeader("Content-type", "application/json;charset=UTF-8");
+        xhttp.open('POST', '', true);
+        xhttp.setRequestHeader('Content-type', 'application/json;charset=UTF-8');
         xhttp.send(JSON.stringify({
           lon: position.coords.longitude,
           lat: position.coords.latitude
@@ -34,6 +47,19 @@ block content
       });
 
       } else {
-        console.log("Sneaky Beaky");
+        console.log('Sneaky Beaky');
+      }
+
+      // Inputs data into html elements
+      function showPlace(res, i) {
+        if (i < res.length && i >= 0) {
+          placeImg.src = res[i].image_url;
+          placeName.innerText = res[i].name;
+          placePhone.innerHTML = `<a href="${res[i].phone}">${res[i].phone}</a>`;
+          placeDistance.innerText = `${Math.round(res[i].distance)} Meters Away`;
+        }
+        else {
+          console.error("Error: Tried to display place that doesn't exist (Out of bounds)");
+        }
       }
     }
