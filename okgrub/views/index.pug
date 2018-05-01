@@ -3,4 +3,37 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
-  
+
+  p#loading Finding your next meal...
+  ul#results
+
+  script.
+    window.onload = () => {
+      if("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(position => {
+        document.getElementById('loading').innerText = "All done!";
+        console.log(position.coords.latitude, position.coords.longitude);
+
+        // Send Position Data to Server
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            let res = JSON.parse(this.responseText);
+            console.log(res);
+            res.forEach(place => {
+              document.getElementById('results').innerHTML += `<li>${place.name}</li>`;
+            });
+          }
+        };
+        xhttp.open("POST", "", true);
+        xhttp.setRequestHeader("Content-type", "application/json;charset=UTF-8");
+        xhttp.send(JSON.stringify({
+          lon: position.coords.longitude,
+          lat: position.coords.latitude
+        }));
+      });
+
+      } else {
+        console.log("Sneaky Beaky");
+      }
+    }

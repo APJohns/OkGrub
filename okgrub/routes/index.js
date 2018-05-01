@@ -8,22 +8,32 @@ const client = yelp.client(process.env.YELPKEY);
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+  res.render('index', { title: 'OkGrub' });
+});
+
+router.post('/', (req, res, next) => {
+  let lat = req.body.lat.toFixed(10);
+  let lon = req.body.lon.toFixed(10);
+  console.log(req.body);
+
   let searchRequest = {
-    term: 'barrington coffee',
-    location: 'boston, ma'
+    term: 'coffee',
+    latitude: lat,
+    longitude: lon
   };
 
   client.search(searchRequest).then(response => {
-    let top5 = response.jsonBody.businesses.slice(0, 5);
+    let places = response.jsonBody.businesses.slice(0, 20);
 
-    top5.forEach(place => {
+    places.forEach(place => {
       console.log(place.name);
     });
+
+    res.json(places);
+    
   }).catch(e => {
     console.log(e);
   });
-
-  res.render('index', { title: 'Express' });
 });
 
 module.exports = router;
