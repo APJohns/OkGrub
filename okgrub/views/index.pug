@@ -8,8 +8,10 @@ block content
   #place
     img#place-image
     h2#name
+    p#rating
     p#phone
     p#distance
+    p#address
   button#no Not for Me
   button#yes Looks Good!
 
@@ -21,8 +23,10 @@ block content
       const card = document.getElementById('place');
       const placeImg = document.getElementById('place-image');
       const placeName = document.getElementById('name');
+      const placeRating = document.getElementById('rating');
       const placePhone = document.getElementById('phone');
       const placeDistance = document.getElementById('distance');
+      const placeAddress = document.getElementById('address');
 
       const saved = [];
 
@@ -66,8 +70,10 @@ block content
         if (i < res.length && i >= 0) {
           placeImg.src = res[i].image_url;
           placeName.innerText = res[i].name;
+          placeRating.innerHTML = `${res[i].rating} / 5 <sub>(${res[i].review_count})</sub>`;
           placePhone.innerHTML = `<a href="${res[i].phone}">${res[i].phone}</a>`;
           placeDistance.innerText = `${Math.round(res[i].distance)} Meters Away`;
+          placeAddress.innerHTML = `${res[i].location.display_address[0]}<br>${res[i].location.display_address[1]}`;
         }
         else {
           console.error("Error: Tried to display place that doesn't exist (Out of bounds)");
