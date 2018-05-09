@@ -4,6 +4,8 @@ $placePadding: 4%;
 body {
   margin: 0;
   font-size: 20px;
+  background-image: url('../images/shattered.png');
+  background-attachment: fixed;
 }
 
 a {
@@ -11,7 +13,7 @@ a {
 }
 
 .nav {
-  background-color: rgba(68, 68, 68, 0.75);
+  background-color: rgba(68, 68, 68, 0.92);
   position: fixed;
   top: 0;
   left: 0;
@@ -47,7 +49,7 @@ a {
 #place {
   width: 75%;
   max-width: 700px;
-  margin: 90px auto;
+  margin: 70px auto;
   background-color: #f8f8f8;
   box-shadow: 0 4px 5px rgba(68, 68, 68, 0.65);
 }
