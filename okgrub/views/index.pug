@@ -2,18 +2,22 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
 
   p#loading Finding your next meal...
   #place
-    img#place-image
-    h2#name
-    p#rating
-    p#phone
-    p#distance
-    p#address
-  button#no Not for Me
-  button#yes Looks Good!
+    .photo
+      img#place-image
+      .top-info
+        h2#name
+        p#rating
+    .voteButtons
+      button#no.vote Not for Me
+      button#yes.vote Looks Good!
+    .info
+      .cols
+        p#distance
+        p#phone
+      p#address
 
   h3 Saved ID's
   ul#saved-list
