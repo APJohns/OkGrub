@@ -32,3 +32,7 @@ exports.getPlaces = (req, res) => {
 		res.render('index', { title: 'OkGrub' });
 	}
 }
+
+exports.saved = (req, res) => {
+	res.render('saved');
+}

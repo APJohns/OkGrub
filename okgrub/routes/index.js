@@ -6,4 +6,6 @@ const placeController = require('../controllers/placeController');
 router.get('/', placeController.getPlaces);
 router.post('/', placeController.getPlaces);
 
+router.get('/saved', placeController.saved);
+
 module.exports = router;

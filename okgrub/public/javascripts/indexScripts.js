@@ -13,10 +13,10 @@ window.onload = () => {
 
 	if('geolocation' in navigator) {
 	navigator.geolocation.getCurrentPosition(position => {
-		loader.style.opacity = '0';
-		loader.addEventListener('transitioned', (e) => {
-			loader.style.display = 'none';
-		})
+		loader.style.left = '100%';
+		loader.style.position = 'fixed';
+		loader.style.marginRight = '-100%';
+		loader.style.opacity = 0;
 		console.log(position.coords.latitude, position.coords.longitude);
 
 		// Send Position Data to Server
