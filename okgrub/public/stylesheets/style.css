@@ -61,8 +61,14 @@ a {
     box-shadow: 0 4px 4px rgba(68, 68, 68, 0.75);
     margin: 0;
     padding: 2px 4%; }
-  .top-info img {
-    margin: 4%; }
+
+#ratings {
+  margin: 4%;
+  font-weight: bold;
+  color: #e74c3c; }
+  #ratings img {
+    margin-left: 0.5rem;
+    vertical-align: middle; }
 
 #name {
   flex: 3; }

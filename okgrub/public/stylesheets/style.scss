@@ -75,9 +75,15 @@ a {
     margin: 0;
     padding: 2px $placePadding;
   }
+}
 
+#ratings {
+  margin: $placePadding;
+  font-weight: bold;
+  color: #e74c3c;
   img {
-    margin: $placePadding;
+    margin-left: 0.5rem;
+    vertical-align: middle;
   }
 }
 
