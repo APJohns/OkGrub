@@ -1,5 +1,6 @@
 window.onload = () => {
 	const card = document.getElementById('place');
+	const yelpLogo = document.getElementById('yelpLogo');
 	const placeImg = document.getElementById('place-image');
 	const placeName = document.getElementById('name');
 	const placeRating = document.getElementById('rating');
@@ -52,10 +53,12 @@ window.onload = () => {
 	function showPlace(res, i) {
 		console.log(i);
 		if (i < res.length && i >= 0) {
-			placeImg.src = res[i].image_url;
+			yelpLogo.href = res[i].url;
+			placeImg.style.backgroundImage = `url('${res[i].image_url}')`;
 			placeName.innerText = res[i].name;
-			placeRating.innerHTML = `${res[i].rating} / 5 <sub>(${res[i].review_count})</sub>`;
-			placePhone.innerHTML = `<a href="${res[i].phone}">${res[i].phone}</a>`;
+			if (res[i].rating % 1 == 0) placeRating.src = `/images/yelp_stars/regular_${Math.floor(res[i].rating)}.png`;
+			else placeRating.src = `/images/yelp_stars/regular_${Math.floor(res[i].rating)}_half.png`;
+			placePhone.innerHTML = `<a href="${res[i].phone}">${res[i].display_phone}</a>`;
 			placeDistance.innerText = `${Math.round(res[i].distance)} Meters Away`;
 			placeAddress.innerHTML = `${res[i].location.display_address[0]}<br>${res[i].location.display_address[1]}`;
 		}

@@ -6,11 +6,12 @@ block content
     .loading-icon
 
   #place
-    .photo
-      img#place-image
+    #place-image
+      a(href='#')#yelpLogo
+        img(src='/images/Yelp_trademark_RGB_outline.png' alt='Yelp')
       .top-info
         h2#name
-        p#rating
+        img(alt='rating')#rating
     .voteButtons
       button#no.vote Not for Me
       button#yes.vote Looks Good!
@@ -19,8 +20,5 @@ block content
         p#distance
         p#phone
       p#address
-
-  h3 Saved ID's
-  ul#saved-list
 
   script(src='/javascripts/indexScripts.js')
