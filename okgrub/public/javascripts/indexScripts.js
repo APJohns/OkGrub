@@ -12,7 +12,11 @@ window.onload = () => {
 
 	const loader = document.getElementById('loader');
 
-	const saved = [];
+	let saved = {"ids": []}
+
+	if (localStorage.getItem('saved')) {
+		saved = JSON.parse(localStorage.getItem('saved'));
+	}
 
 	if('geolocation' in navigator) {
 	navigator.geolocation.getCurrentPosition(position => {
@@ -72,7 +76,12 @@ window.onload = () => {
 	}
 
 	function savePlace(id) {
-		saved.push(id);
-		document.getElementById('saved-list').innerHTML += `<li>${id}</li>`;
+		if (localStorage.getItem('saved')) {
+			saved = JSON.parse(localStorage.getItem('saved'));
+		}
+		if (!saved.ids.includes(id)) saved.ids.push(id);
+		console.log(saved);
+		
+		localStorage.setItem('saved', JSON.stringify(saved));
 	}
 }

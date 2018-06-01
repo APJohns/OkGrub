@@ -3,11 +3,17 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet")
   body
 
     .nav
-      a(href='/') Discover
-      a(href='/saved') Saved
+      a(href='/')
+        i.material-icons home
+      a(href='/')
+        i.material-icons explore
+      a(href='/saved')
+        i.material-icons save
 
     .content
       block content
