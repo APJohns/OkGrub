@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('okgrub:server');
+var debug = require('debug')('snacksnearu:server');
 var http = require('http');
 
 require('dotenv').config({path: 'variables.env'});

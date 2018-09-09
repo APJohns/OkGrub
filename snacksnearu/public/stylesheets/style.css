@@ -1,36 +1,26 @@
-$placePadding: 4%;
-
-
 body {
   margin: 0;
   height: 100vh;
   display: flex;
   flex-direction: column;
   font-size: 20px;
-  background-color: #ddd;
-
-}
+  background-color: #ddd; }
 
 .content {
-  flex: 13;
-}
+  flex: 13; }
 
 a {
   color: #00B7FF;
-  text-decoration: none;
-}
+  text-decoration: none; }
 
 .nav {
-  background-color: rgb(68, 68, 68);
+  background-color: #444444;
   flex: 1;
   display: flex;
-  align-items: center;
-
-  a {
+  align-items: center; }
+  .nav a {
     text-align: center;
-    flex: 1;
-  }
-}
+    flex: 1; }
 
 #place-image {
   width: 100%;
@@ -39,8 +29,7 @@ a {
   position: relative;
   background-image: none;
   background-position: center;
-  background-size: cover;
-}
+  background-size: cover; }
 
 #place {
   height: 100%;
@@ -48,12 +37,10 @@ a {
   margin: auto;
   background-color: #f8f8f8;
   box-shadow: 0 4px 6px rgba(68, 68, 68, 0.75);
-  overflow: hidden;
-}
+  overflow: hidden; }
 
-#yelpLogo {
-  img { width: 25%; }
-}
+#yelpLogo img {
+  width: 25%; }
 
 .top-info {
   position: absolute;
@@ -64,70 +51,56 @@ a {
   bottom: 0;
   left: 0;
   right: 0;
-  color: white;
-
-  h2 {
+  color: white; }
+  .top-info h2 {
     font-size: 1.75rem;
     background-color: #e74c3c;
     box-shadow: 0 4px 4px rgba(68, 68, 68, 0.75);
     margin: 0;
-    padding: 2px $placePadding;
-  }
-}
+    padding: 2px 4%; }
 
 #ratings {
-  margin: $placePadding;
+  margin: 4%;
   font-weight: bold;
-  color: #e74c3c;
-  img {
+  color: #e74c3c; }
+  #ratings img {
     margin-left: 0.5rem;
-    vertical-align: middle;
-  }
-}
+    vertical-align: middle; }
 
 #name {
-  flex: 3;
-}
+  flex: 3; }
 
 #rating {
   flex: 1;
-  text-align: right;
-}
+  text-align: right; }
 
 .voteButtons {
   display: flex;
-  height: 50px;
-}
+  height: 50px; }
 
 .vote {
   flex: 1;
   margin: 0;
   border: none;
   color: white;
-  font-weight: bold;
-}
+  font-weight: bold; }
 
-#yes {
-  background-color: #2ecc71;
-}
+#forward {
+  background-color: #2ecc71; }
 
-#no {
-  background-color: #c0392b;
-}
+#back {
+  background-color: #c0392b; }
 
 .info {
-  padding: 0 $placePadding 30px $placePadding;
-}
+  padding: 0 4% 30px 4%; }
 
 .cols {
-  display: flex;
-
-  * {flex: 1;}
-}
+  display: flex; }
+  .cols * {
+    flex: 1; }
 
 #phone {
-  text-align: right;
-}
+  text-align: right; }
 
 #loader {
   position: absolute;
@@ -137,8 +110,7 @@ a {
   bottom: 0;
   left: 0;
   right: 0;
-  transition: all ease 0.5s;
-}
+  transition: all ease 0.5s; }
 
 .loading-icon {
   position: absolute;
@@ -149,10 +121,12 @@ a {
   border-top: solid 7px #00B7FF;
   left: calc(50% - 50px);
   top: 40%;
-  animation: spin 2s linear infinite;
-}
+  animation: spin 2s linear infinite; }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+/*# sourceMappingURL=style.css.map */

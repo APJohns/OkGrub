@@ -1,0 +1,22 @@
+extends layout
+
+block content
+	.saved-list
+	script.
+		let saved = {"ids": []};
+		if (localStorage.getItem('saved')) {
+			saved = JSON.parse(localStorage.getItem('saved'));
+			console.log(saved);
+
+			// Send Position Data to Server
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					let res = JSON.parse(this.responseText).jsonBody;
+					console.log(res);
+				}
+			};
+			xhttp.open('POST', '', true);
+			xhttp.setRequestHeader('Content-type', 'application/json;charset=UTF-8');
+			xhttp.send(JSON.stringify(saved));
+		}

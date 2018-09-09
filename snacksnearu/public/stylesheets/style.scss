@@ -1,0 +1,158 @@
+$placePadding: 4%;
+
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  background-color: #ddd;
+
+}
+
+.content {
+  flex: 13;
+}
+
+a {
+  color: #00B7FF;
+  text-decoration: none;
+}
+
+.nav {
+  background-color: rgb(68, 68, 68);
+  flex: 1;
+  display: flex;
+  align-items: center;
+
+  a {
+    text-align: center;
+    flex: 1;
+  }
+}
+
+#place-image {
+  width: 100%;
+  height: 60%;
+  overflow: hidden;
+  position: relative;
+  background-image: none;
+  background-position: center;
+  background-size: cover;
+}
+
+#place {
+  height: 100%;
+  max-width: 800px;
+  margin: auto;
+  background-color: #f8f8f8;
+  box-shadow: 0 4px 6px rgba(68, 68, 68, 0.75);
+  overflow: hidden;
+}
+
+#yelpLogo {
+  img { width: 25%; }
+}
+
+.top-info {
+  position: absolute;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: white;
+
+  h2 {
+    font-size: 1.75rem;
+    background-color: #e74c3c;
+    box-shadow: 0 4px 4px rgba(68, 68, 68, 0.75);
+    margin: 0;
+    padding: 2px $placePadding;
+  }
+}
+
+#ratings {
+  margin: $placePadding;
+  font-weight: bold;
+  color: #e74c3c;
+  img {
+    margin-left: 0.5rem;
+    vertical-align: middle;
+  }
+}
+
+#name {
+  flex: 3;
+}
+
+#rating {
+  flex: 1;
+  text-align: right;
+}
+
+.voteButtons {
+  display: flex;
+  height: 50px;
+}
+
+.vote {
+  flex: 1;
+  margin: 0;
+  border: none;
+  color: white;
+  font-weight: bold;
+}
+
+#forward {
+  background-color: #2ecc71;
+}
+
+#back {
+  background-color: #c0392b;
+}
+
+.info {
+  padding: 0 $placePadding 30px $placePadding;
+}
+
+.cols {
+  display: flex;
+
+  * {flex: 1;}
+}
+
+#phone {
+  text-align: right;
+}
+
+#loader {
+  position: absolute;
+  z-index: 2;
+  background-color: #444;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: all ease 0.5s;
+}
+
+.loading-icon {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  border: solid 7px rgba(68, 68, 68, 0);
+  border-top: solid 7px #00B7FF;
+  left: calc(50% - 50px);
+  top: 40%;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
