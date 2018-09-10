@@ -6,17 +6,20 @@ const request = require('request');
 
 const client = yelp.client(process.env.YELPKEY);
 
+exports.index = (req, res) => {
+	res.render('index', { title: 'SnacksNearU' });
+}
+
 exports.getPlaces = (req, res) => {
 	if (req.method == 'POST') {
-		let lat = req.body.lat.toFixed(6);
-		let lon = req.body.lon.toFixed(6);
 		console.log(req.body);
 		
 		let searchRequest = {
-			term: 'beer',
-			latitude: lat,
-			longitude: lon,
-			limit: 40
+			term: req.body.search,
+			latitude: req.body.lat,
+			longitude: req.body.lon,
+			limit: 40,
+			categories: 'food'
 		};
 
 		client.search(searchRequest).then(response => {
@@ -26,12 +29,13 @@ exports.getPlaces = (req, res) => {
 				console.log(place.name);
 			});
 
-			res.json(places);
+			//res.json(places);
+			res.render('explore', { title: 'SnacksNearU', places: places });
 			
 		}).catch(e => {
 			console.log(e);
 		});
 	} else {
-		res.render('index', { title: 'SnacksNearU' });
+		res.render('explore', { title: 'SnacksNearU' });
 	}
 }

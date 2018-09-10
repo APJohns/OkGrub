@@ -1,26 +1,12 @@
 extends layout
 
 block content
+  h1 SnacksNearU
 
-  #loader
-    .loading-icon
+  form(action="/explore", method="post")
+    input(type="search", name="search")
+    input(type="hidden", name="lat", id="lat")
+    input(type="hidden", name="lon", id="lon")
+    input(type="submit")
 
-  #place
-    #place-image
-      a(href='#')#yelpLogo
-        img(src='/images/Yelp_trademark_RGB_outline.png' alt='Yelp')
-      .top-info
-        h2#name
-        a(href='#')#ratings
-          span#ratingCount
-          img(alt='rating')#rating
-    .voteButtons
-      button#back.vote <-
-      button#forward.vote ->
-    .info
-      .cols
-        p#distance
-        p#phone
-      p#address
-
-  script(src='/javascripts/indexScripts.js')
+  script(src='/javascripts/index.js')

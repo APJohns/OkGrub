@@ -14,94 +14,124 @@ a {
   text-decoration: none; }
 
 .nav {
-  background-color: #444444;
+  position: fixed;
+  background: none;
+  border: none;
   flex: 1;
-  display: flex;
-  align-items: center; }
-  .nav a {
-    text-align: center;
-    flex: 1; }
+  font-size: 2em;
+  cursor: pointer; }
 
-#place-image {
-  width: 100%;
-  height: 60%;
-  overflow: hidden;
+.image-text {
   position: relative;
-  background-image: none;
-  background-position: center;
-  background-size: cover; }
-
-#place {
-  height: 100%;
-  max-width: 800px;
-  margin: auto;
-  background-color: #f8f8f8;
-  box-shadow: 0 4px 6px rgba(68, 68, 68, 0.75);
+  height: 70%;
+  vertical-align: middle;
   overflow: hidden; }
 
-#yelpLogo img {
-  width: 25%; }
-
-.top-info {
-  position: absolute;
-  text-align: right;
+.place {
+  height: 100vh;
+  max-width: 800px;
+  margin: auto;
+  color: #f8f8f8;
+  box-shadow: 0 4px 6px rgba(68, 68, 68, 0.75);
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  color: white; }
-  .top-info h2 {
-    font-size: 1.75rem;
-    background-color: #e74c3c;
-    box-shadow: 0 4px 4px rgba(68, 68, 68, 0.75);
-    margin: 0;
-    padding: 2px 4%; }
+  justify-content: flex-end;
+  background-size: cover;
+  background-position: center; }
 
-#ratings {
+.yelpLogo {
+  text-align: right; }
+  .yelpLogo img {
+    width: 25%; }
+
+.top {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px; }
+  .top a {
+    margin: 0; }
+
+.belowTitle {
+  display: flex;
+  justify-content: space-between; }
+
+.distance {
+  margin: 0; }
+
+.ratings {
   margin: 4%;
   font-weight: bold;
-  color: #e74c3c; }
-  #ratings img {
+  align-self: flex-end; }
+  .ratings img {
     margin-left: 0.5rem;
     vertical-align: middle; }
 
-#name {
-  flex: 3; }
+.cost {
+  position: absolute;
+  top: -27px;
+  align-self: flex-end; }
+  .cost svg {
+    fill: #72af72;
+    width: 40px; }
 
-#rating {
+.name {
+  font-size: 1.75rem;
+  background-color: #e74c3c;
+  border-radius: 5px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+  margin: 0;
+  padding: 3px 5%;
+  z-index: 1; }
+
+.rating {
   flex: 1;
   text-align: right; }
 
 .voteButtons {
   display: flex;
-  height: 50px; }
+  height: 50px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0; }
 
 .vote {
-  flex: 1;
+  color: #f8f8f8;
   margin: 0;
   border: none;
-  color: white;
-  font-weight: bold; }
+  font-weight: bold;
+  font-size: 1.7em;
+  background-color: rgba(94, 19, 104, 0.9); }
 
-#forward {
-  background-color: #2ecc71; }
+.address {
+  margin-top: 0; }
+
+#next {
+  flex: 1;
+  cursor: pointer; }
 
 #back {
-  background-color: #c0392b; }
+  flex: 1;
+  cursor: pointer; }
+
+.gradient {
+  display: block;
+  height: 10%;
+  width: 100%;
+  content: '';
+  flex: 1;
+  background: linear-gradient(rgba(94, 19, 104, 0), rgba(94, 19, 104, 0.5) 35%, rgba(94, 19, 104, 0.85)); }
 
 .info {
-  padding: 0 4% 30px 4%; }
+  height: 40%;
+  padding: 20px 4% 30px 4%;
+  background-color: rgba(94, 19, 104, 0.85); }
 
-.cols {
-  display: flex; }
-  .cols * {
-    flex: 1; }
-
-#phone {
+.phone {
   text-align: right; }
 
+/*
 #loader {
   position: absolute;
   z-index: 2;
@@ -110,7 +140,8 @@ a {
   bottom: 0;
   left: 0;
   right: 0;
-  transition: all ease 0.5s; }
+  transition: all ease 0.5s;
+}
 
 .loading-icon {
   position: absolute;
@@ -121,12 +152,12 @@ a {
   border-top: solid 7px #00B7FF;
   left: calc(50% - 50px);
   top: 40%;
-  animation: spin 2s linear infinite; }
+  animation: spin 2s linear infinite;
+}
 
 @keyframes spin {
-  0% {
-    transform: rotate(0deg); }
-  100% {
-    transform: rotate(360deg); } }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}*/
 
 /*# sourceMappingURL=style.css.map */
