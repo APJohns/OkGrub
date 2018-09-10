@@ -12,3 +12,11 @@ function showPlaces(n) {
 
 document.getElementById('next').addEventListener('click', () => showPlaces(++index));
 document.getElementById('back').addEventListener('click', () => showPlaces(--index));
+
+const names = document.getElementsByClassName('name');
+const moreInfo = document.getElementsByClassName('moreInfo');
+for (let i = 0; i < names.length; i++) {
+	names[i].addEventListener('click', () => {
+		moreInfo[i].classList.toggle('slide');
+	});
+}

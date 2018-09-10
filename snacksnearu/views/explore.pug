@@ -21,20 +21,20 @@ block content
             
             h2.name=place.name
             .belowTitle
-              - distance = Math.round(place.distance)
-              p.distance=distance
+              - distance = (Math.round(place.distance) * 0.000621371).toFixed(2)
+              p.distance #{distance} mi.
               a(href=place.url).ratings
                 span#ratingCount=place.review_count
                 if place.rating % 1 == 0
                   img(alt='rating' src=`/images/yelp_stars/regular_${Math.floor(place.rating)}.png`).rating
                 else
                   img(alt='rating' src=`/images/yelp_stars/regular_${Math.floor(place.rating)}_half.png`).rating
-          .moreInfo
-            a(href=place.phone).phone=place.display_phone
-            p.address
-            each line in place.location.display_address
-              span=line
-              br
+        .moreInfo
+          a(href=place.phone).phone=place.display_phone
+          p.address
+          each line in place.location.display_address
+            span=line
+            br
 
   .voteButtons
     button#back.vote &lsaquo;
