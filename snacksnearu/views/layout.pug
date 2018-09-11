@@ -5,9 +5,18 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet")
+
+    script(src='/javascripts/nav.js' defer)
   body
 
-    button.nav &#9776;
+    #wrapper
+      button#navButton &#9776;
+      nav#nav
+        form(action="/explore", method="post")
+          input(type="search", placeholder='Quick Search')
+        ul
+          li
+            a(href='/') Home
 
-    .content
-      block content
+      .content
+        block content

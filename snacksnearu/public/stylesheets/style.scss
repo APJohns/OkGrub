@@ -7,11 +7,20 @@ body {
   display: flex;
   flex-direction: column;
   font-size: 20px;
-  background-color: #ddd;
+  background: linear-gradient(45deg, #1a6597, #559ecf);
 }
 
 .content {
   flex: 13;
+  width: 100%;
+}
+
+#index {
+  padding: $placePadding;
+  text-align: center;
+  background-color: rgba(226, 226, 226, 0.9);
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
 a {
@@ -19,13 +28,55 @@ a {
   text-decoration: none;
 }
 
-.nav {
+#navButton {
   position: fixed;
   background: none;
   border: none;
   flex: 1;
   font-size: 2em;
+  z-index: 3;
   cursor: pointer;
+}
+
+.searchForm {
+  input[type="search"] {border-radius: 5px 0 0 5px;}
+  input[type="submit"] {
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+  }
+}
+
+input {
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: none;
+}
+
+#nav {
+  box-sizing: border-box;
+  position: fixed;
+  background-color: rgba(61, 61, 61, 0.9);
+  width: 100%;
+  max-width: 800px;
+  height: 100vh;
+  margin-left: -100%;
+  z-index: 2;
+  padding: 2.5em;
+  font-size: 1.2em;
+  opacity: 0;
+  transition: all 0.5s ease;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  input {
+    margin-bottom: 20px;
+    width: 100%;
+  }
 }
 
 .image-text {
@@ -35,12 +86,17 @@ a {
   overflow: hidden;
 }
 
+#wrapper {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
 .place {
   height: 100vh;
-  max-width: 800px;
   margin: auto;
   color: #f8f8f8;
-  box-shadow: 0 4px 6px rgba(68, 68, 68, 0.75);
+  box-shadow: 4px 0 4px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -101,6 +157,7 @@ a {
   margin-bottom: 3px;
   padding: 3px 5%;
   z-index: 1;
+  cursor: default;
 }
 
 .rating {
@@ -111,10 +168,12 @@ a {
 .voteButtons {
   display: flex;
   height: 50px;
-  position: fixed;
+  position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
+  max-width: 800px;
+  margin: auto;
 }
 
 .vote {

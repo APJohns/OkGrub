@@ -1,12 +1,15 @@
 extends layout
 
 block content
-  h1 SnacksNearU
+  #index
+    h1 SnacksNearU
 
-  form(action="/explore", method="post")
-    input(type="search", name="search")
-    input(type="hidden", name="lat", id="lat")
-    input(type="hidden", name="lon", id="lon")
-    input(type="submit")
+    form(action="/explore", method="post").searchForm
+      input(type="search", name="search")
+      input(type="hidden", name="lat", id="lat")
+      input(type="hidden", name="lon", id="lon")
+      input(type="submit", value="Search", disabled)#submit
+
+    p#gettingLoc Getting Location...
 
   script(src='/javascripts/index.js')

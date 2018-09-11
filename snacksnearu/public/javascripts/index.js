@@ -5,6 +5,9 @@ if('geolocation' in navigator) {
 		let lon = document.getElementById('lon');
 		lat.value = position.coords.latitude;
 		lon.value = position.coords.longitude;
+
+		document.getElementById('gettingLoc').innerText = 'Found you!';
+		document.getElementById('submit').disabled = false;
 	});
 
 	} else {
