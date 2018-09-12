@@ -1,0 +1,29 @@
+mixin search
+	form(action="/explore", method="post")
+		if search
+			input(type="search", placeholder='Search', name='term' value=search.term).fullInput
+			input(type="hidden", name="lat", id="lat" value=search.lat)
+			input(type="hidden", name="lon", id="lon", value=search.lon)
+			label(for='radius') Within 
+				span#distance=search.radius
+				|  mi.
+			input(type='range', min='0', max='25', name='radius' id='dist' value=search.radius).fullInput
+		else
+			input(type="search", placeholder='Search', name='term').fullInput
+			input(type="hidden", name="lat", id="lat")
+			input(type="hidden", name="lon", id="lon")
+			label(for='radius') Within 
+				span#distance 10
+				|  mi.
+				input(type='range', min='1', max='25', name='radius' id='dist' value='10').fullInput
+		.cols
+			label(for='sort_by').sort Sort By: 
+				select(name='sort_by')
+					option(value='best_match') Best Match
+					option(value='rating') Rating
+					option(value='review_count') Review Count
+					option(value='distance') Distance
+			label(for='open_now').open
+				input(type='checkbox', value='true', name='open_now')
+				|  Open Now?
+		input(type="submit", value="Search").fullInput

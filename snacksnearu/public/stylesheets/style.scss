@@ -1,4 +1,5 @@
 $placePadding: 4%;
+$purple: rgba(94, 19, 104, 0.85);
 
 
 body {
@@ -8,6 +9,7 @@ body {
   flex-direction: column;
   font-size: 20px;
   background: linear-gradient(45deg, #1a6597, #559ecf);
+  font-family: 'Karla', sans-serif;
 }
 
 .content {
@@ -40,12 +42,8 @@ a {
   cursor: pointer;
 }
 
-.searchForm {
-  input[type="search"] {border-radius: 5px 0 0 5px;}
-  input[type="submit"] {
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
-  }
+form {
+  text-align: center;
 }
 
 input[type='checkbox'] {
@@ -58,11 +56,28 @@ input[type='submit'] {
   cursor: pointer;
 }
 
+input[type='range'] {
+  margin: 0;
+}
+
+.sort {
+  text-align: left;
+}
+
 input {
-  padding: 5px;
+  font-family: 'Karla', sans-serif;
+  padding: 6px;
   box-sizing: border-box;
   border-radius: 5px;
   border: none;
+  font-size: 1em;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin: 2% 0;
+  font-size: 1em;
 }
 
 #nav {
@@ -86,18 +101,11 @@ input {
     margin: 0;
     margin-bottom: 5%;
   }
-
-  label {
-    display: block;
-    margin: 2% 0;
-  }
 }
 
 .cols {
   display: flex;
-  * {
-    flex: 1;
-  }
+  justify-content: space-between;
 }
 
 .open {
@@ -153,8 +161,9 @@ input {
   justify-content: space-between;
 }
 
-.distance {
-  margin: 0;
+#distance {
+  color: $purple;
+  font-weight: bold;
 }
 
 .ratings {
@@ -234,18 +243,18 @@ input {
   width: 100%;
   content: '';
   flex: 1;
-  background: linear-gradient(rgba(94, 19, 104, 0), rgba(94, 19, 104, 0.5) 35%, rgba(94, 19, 104, 0.85));
+  background: linear-gradient(rgba(94, 19, 104, 0), rgba(94, 19, 104, 0.5) 35%, $purple);
 }
 
 .info {
   padding: 20px $placePadding 30px $placePadding;
-  background-color: rgba(94, 19, 104, 0.85);
+  background-color: $purple;
 }
 
 .moreInfo {
   margin-bottom: -200px;
   padding: 20px $placePadding 100px $placePadding;
-  background-color: rgba(94, 19, 104, 0.85);
+  background-color: $purple;
   border-top: 2px dashed rgba(71, 135, 209, 0.4);
   transition: all 0.3s ease;
 }

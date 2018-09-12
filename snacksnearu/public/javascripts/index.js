@@ -6,15 +6,10 @@ if('geolocation' in navigator) {
 		lat.value = position.coords.latitude;
 		lon.value = position.coords.longitude;
 
-		lat = document.getElementById('latNav');
-		lon = document.getElementById('lonNav');
-		lat.value = position.coords.latitude;
-		lon.value = position.coords.longitude;
-
 		document.getElementById('gettingLoc').innerText = 'Found you!';
 		document.getElementById('submit').disabled = false;
 	});
 
 	} else {
-		console.log('Sneaky Beaky');
+		console.log("I can't seem to find you :/");
 	}

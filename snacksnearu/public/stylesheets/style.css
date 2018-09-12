@@ -4,7 +4,8 @@ body {
   display: flex;
   flex-direction: column;
   font-size: 20px;
-  background: linear-gradient(45deg, #1a6597, #559ecf); }
+  background: linear-gradient(45deg, #1a6597, #559ecf);
+  font-family: 'Karla', sans-serif; }
 
 .content {
   flex: 13;
@@ -32,11 +33,8 @@ a {
   z-index: 3;
   cursor: pointer; }
 
-.searchForm input[type="search"] {
-  border-radius: 5px 0 0 5px; }
-.searchForm input[type="submit"] {
-  border-radius: 0 5px 5px 0;
-  cursor: pointer; }
+form {
+  text-align: center; }
 
 input[type='checkbox'] {
   display: inline-block; }
@@ -46,11 +44,25 @@ input[type='submit'] {
   color: #f8f8f8;
   cursor: pointer; }
 
+input[type='range'] {
+  margin: 0; }
+
+.sort {
+  text-align: left; }
+
 input {
-  padding: 5px;
+  font-family: 'Karla', sans-serif;
+  padding: 6px;
   box-sizing: border-box;
   border-radius: 5px;
-  border: none; }
+  border: none;
+  font-size: 1em;
+  text-align: center; }
+
+label {
+  display: block;
+  margin: 2% 0;
+  font-size: 1em; }
 
 #nav {
   color: #f8f8f8;
@@ -71,14 +83,10 @@ input {
     padding: 0;
     margin: 0;
     margin-bottom: 5%; }
-  #nav label {
-    display: block;
-    margin: 2% 0; }
 
 .cols {
-  display: flex; }
-  .cols * {
-    flex: 1; }
+  display: flex;
+  justify-content: space-between; }
 
 .open {
   text-align: right; }
@@ -126,8 +134,9 @@ input {
   display: flex;
   justify-content: space-between; }
 
-.distance {
-  margin: 0; }
+#distance {
+  color: rgba(94, 19, 104, 0.85);
+  font-weight: bold; }
 
 .ratings {
   margin: 4%;
