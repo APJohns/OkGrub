@@ -32,6 +32,8 @@ a {
   position: fixed;
   background: none;
   border: none;
+  color: #f8f8f8;
+  text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.3);
   flex: 1;
   font-size: 2em;
   z-index: 3;
@@ -46,6 +48,16 @@ a {
   }
 }
 
+input[type='checkbox'] {
+  display: inline-block;
+}
+
+input[type='submit'] {
+  background-color: rgba(71, 135, 209, 0.85);
+  color: #f8f8f8;
+  cursor: pointer;
+}
+
 input {
   padding: 5px;
   box-sizing: border-box;
@@ -54,6 +66,7 @@ input {
 }
 
 #nav {
+  color: #f8f8f8;
   box-sizing: border-box;
   position: fixed;
   background-color: rgba(61, 61, 61, 0.9);
@@ -65,18 +78,34 @@ input {
   padding: 2.5em;
   font-size: 1.2em;
   opacity: 0;
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
 
   ul {
     list-style: none;
     padding: 0;
     margin: 0;
+    margin-bottom: 5%;
   }
 
-  input {
-    margin-bottom: 20px;
-    width: 100%;
+  label {
+    display: block;
+    margin: 2% 0;
   }
+}
+
+.cols {
+  display: flex;
+  * {
+    flex: 1;
+  }
+}
+
+.open {
+  text-align: right;
+}
+
+.fullInput {
+  width: 100%;
 }
 
 .image-text {
@@ -150,7 +179,7 @@ input {
 
 .name {
   font-size: 1.75rem;
-  background-color: #e74c3c;
+  background-color: rgba(71, 135, 209, 0.85);
   border-radius: 5px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
   margin: 0;
@@ -217,7 +246,8 @@ input {
   margin-bottom: -200px;
   padding: 20px $placePadding 100px $placePadding;
   background-color: rgba(94, 19, 104, 0.85);
-  transition: all 0.5s ease;
+  border-top: 2px dashed rgba(71, 135, 209, 0.4);
+  transition: all 0.3s ease;
 }
 
 .phone {
@@ -226,7 +256,7 @@ input {
 
 .slide {
   margin-bottom: 0;
-  transition: all 0.5s ease;
+  transition: all 0.3s cubic-bezier(.18,1,.37,1.42);
 }
 
 /*

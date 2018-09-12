@@ -25,6 +25,8 @@ a {
   position: fixed;
   background: none;
   border: none;
+  color: #f8f8f8;
+  text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.3);
   flex: 1;
   font-size: 2em;
   z-index: 3;
@@ -36,6 +38,14 @@ a {
   border-radius: 0 5px 5px 0;
   cursor: pointer; }
 
+input[type='checkbox'] {
+  display: inline-block; }
+
+input[type='submit'] {
+  background-color: rgba(71, 135, 209, 0.85);
+  color: #f8f8f8;
+  cursor: pointer; }
+
 input {
   padding: 5px;
   box-sizing: border-box;
@@ -43,6 +53,7 @@ input {
   border: none; }
 
 #nav {
+  color: #f8f8f8;
   box-sizing: border-box;
   position: fixed;
   background-color: rgba(61, 61, 61, 0.9);
@@ -54,14 +65,26 @@ input {
   padding: 2.5em;
   font-size: 1.2em;
   opacity: 0;
-  transition: all 0.5s ease; }
+  transition: all 0.3s ease; }
   #nav ul {
     list-style: none;
     padding: 0;
-    margin: 0; }
-  #nav input {
-    margin-bottom: 20px;
-    width: 100%; }
+    margin: 0;
+    margin-bottom: 5%; }
+  #nav label {
+    display: block;
+    margin: 2% 0; }
+
+.cols {
+  display: flex; }
+  .cols * {
+    flex: 1; }
+
+.open {
+  text-align: right; }
+
+.fullInput {
+  width: 100%; }
 
 .image-text {
   position: relative;
@@ -124,7 +147,7 @@ input {
 
 .name {
   font-size: 1.75rem;
-  background-color: #e74c3c;
+  background-color: rgba(71, 135, 209, 0.85);
   border-radius: 5px;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
   margin: 0;
@@ -182,14 +205,15 @@ input {
   margin-bottom: -200px;
   padding: 20px 4% 100px 4%;
   background-color: rgba(94, 19, 104, 0.85);
-  transition: all 0.5s ease; }
+  border-top: 2px dashed rgba(71, 135, 209, 0.4);
+  transition: all 0.3s ease; }
 
 .phone {
   text-align: right; }
 
 .slide {
   margin-bottom: 0;
-  transition: all 0.5s ease; }
+  transition: all 0.3s cubic-bezier(0.18, 1, 0.37, 1.42); }
 
 /*
 #loader {

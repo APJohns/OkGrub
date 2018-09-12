@@ -6,6 +6,11 @@ if('geolocation' in navigator) {
 		lat.value = position.coords.latitude;
 		lon.value = position.coords.longitude;
 
+		lat = document.getElementById('latNav');
+		lon = document.getElementById('lonNav');
+		lat.value = position.coords.latitude;
+		lon.value = position.coords.longitude;
+
 		document.getElementById('gettingLoc').innerText = 'Found you!';
 		document.getElementById('submit').disabled = false;
 	});
