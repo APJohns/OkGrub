@@ -1,6 +1,7 @@
 const form = document.getElementById('searchForm');
 const termInput = document.getElementById('term');
 const btnSubmit = document.getElementById('btnSubmit');
+const laoder = document.getElementById('loader');
 
 function getLocation() {
 	if('geolocation' in navigator) {
@@ -14,8 +15,11 @@ function getLocation() {
 
 			termInput.disabled = false;
 			btnSubmit.disabled = false;
+			loader.style.opacity = 0;
+			document.getElementById('loading-text').innerText = 'Found you!';
+			document.getElementById('loading-text').style.color = 'rgba(71, 135, 209, 0.85)';
+			laoder.addEventListener('transitionend', () => loader.style.display = 'none');
 
-			document.getElementById('gettingLoc').innerText = 'Found you!';
 		});
 
 		} else {
@@ -28,6 +32,6 @@ const lonInput = document.getElementById('lon');
 if (latInput.value != '' && lonInput.value != '') {
 	termInput.disabled = false;
 	btnSubmit.disabled = false;
-
+	loader.style.display = 'none';
 }
 else getLocation();
