@@ -1,7 +1,7 @@
 mixin search
 	form(action="/explore", method="post")#searchForm
 		if search
-			input(type="search", placeholder="What are you in the mood for?", name='term' value=search.term).fullInput
+			input(type="search", placeholder="What are you in the mood for?", name='term' value=search.term, disabled).fullInput#term
 			input(type="hidden", name="lat", id="lat" value=search.lat)
 			input(type="hidden", name="lon", id="lon", value=search.lon)
 			label(for='radius') Within 
@@ -9,7 +9,7 @@ mixin search
 				|  mi.
 			input(type='range', min='0', max='25', name='radius' id='dist' value=search.radius).fullInput
 		else
-			input(type="search", placeholder="What are you in the mood for?", name='term').fullInput
+			input(type="search", placeholder="What are you in the mood for?", name='term', disabled).fullInput#term
 			input(type="hidden", name="lat", id="lat")
 			input(type="hidden", name="lon", id="lon")
 			label(for='radius') Within 
@@ -26,4 +26,4 @@ mixin search
 			label(for='open_now').open
 				input(type='checkbox', value='true', name='open_now')
 				|  Open Now?
-		button(type='button')#btnSubmit.fullInput Search
+		button(type='button', disabled)#btnSubmit.fullInput Search

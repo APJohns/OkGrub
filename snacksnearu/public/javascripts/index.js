@@ -1,6 +1,6 @@
-let located = false;
-let isSubmit = false;
 const form = document.getElementById('searchForm');
+const termInput = document.getElementById('term');
+const btnSubmit = document.getElementById('btnSubmit');
 
 function getLocation() {
 	if('geolocation' in navigator) {
@@ -12,10 +12,10 @@ function getLocation() {
 			lon.value = position.coords.longitude;
 			located = true;
 
-			if (isSubmit) form.submit();
+			termInput.disabled = false;
+			btnSubmit.disabled = false;
 
 			document.getElementById('gettingLoc').innerText = 'Found you!';
-			document.getElementById('btnSubmit').disabled = false;
 		});
 
 		} else {
@@ -23,13 +23,11 @@ function getLocation() {
 		}
 }
 
-document.getElementById('btnSubmit').addEventListener('click', () => {
-	if (located) form.submit();
-	else isSubmit = true;
-});
-
 const latInput = document.getElementById('lat');
 const lonInput = document.getElementById('lon');
 if (latInput.value != '' && lonInput.value != '') {
-	located = true;
-} else getLocation();
+	termInput.disabled = false;
+	btnSubmit.disabled = false;
+
+}
+else getLocation();

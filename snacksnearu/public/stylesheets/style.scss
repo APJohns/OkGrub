@@ -57,6 +57,11 @@ input[type='checkbox'] {
   cursor: pointer;
 }
 
+#btnSubmit:disabled, #btnSubmit[disabled] {
+  background-color: rgba(71, 73, 94, 0.4);
+  cursor: not-allowed;
+}
+
 input[type='range'] {
   margin: 0;
 }
