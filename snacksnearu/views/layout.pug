@@ -21,6 +21,7 @@ html
       .content
         block content
 
+    script(src='/javascripts/index.js')
     script.
       document.getElementById('dist').addEventListener('input', () => {
         document.getElementById('distance').innerText = document.getElementById('dist').value;

@@ -15,6 +15,7 @@ exports.getPlaces = (req, res) => {
 	if (req.body.open_now == 'true') open_now = true;
 	
 	let searchRequest = {
+		method: 'POST',
 		term: req.body.term,
 		latitude: req.body.lat,
 		longitude: req.body.lon,
