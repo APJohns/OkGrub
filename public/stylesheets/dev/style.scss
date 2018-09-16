@@ -239,10 +239,8 @@ label {
 }
 
 .voteButtons {
-  display: flex;
-  height: 50px;
   position: absolute;
-  bottom: 0;
+  top: 25%;
   left: 0;
   right: 0;
   max-width: 800px;
@@ -252,10 +250,13 @@ label {
 .vote {
   color: #f8f8f8;
   margin: 0;
+  height: 25vh;
+  width: 25%;
   border: none;
   font-weight: bold;
-  font-size: 1.7em;
-  background-color: rgba(94, 19, 104, 0.9);
+  font-size: 4em;
+  background-color: rgba(0, 0, 0, 0);
+  text-shadow: 4px 4px 3px rgba(0, 0, 0, 0.3);
 }
 
 .address {
@@ -263,12 +264,14 @@ label {
 }
 
 #next {
-  flex: 1;
+  position: absolute;
+  right: 0;
   cursor: pointer;
 }
 
 #back {
-  flex: 1;
+  position: absolute;
+  left: 0;
   cursor: pointer;
 }
 
@@ -287,7 +290,7 @@ label {
 }
 
 .moreInfo {
-  margin-bottom: -200px;
+  margin-bottom: -250px;
   padding: 20px $placePadding 100px $placePadding;
   background-color: $purple;
   border-top: 2px dashed rgba(71, 135, 209, 0.4);
@@ -299,7 +302,7 @@ label {
 }
 
 .slide {
-  margin-bottom: 0;
+  margin-bottom: -50px;
   transition: all 0.3s cubic-bezier(.18,1,.37,1.42);
 }
 
