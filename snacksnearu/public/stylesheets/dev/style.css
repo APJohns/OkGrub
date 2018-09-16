@@ -268,21 +268,12 @@ label {
   margin: 45% auto 0 auto;
   color: #f8f8f8;
   font-size: 2em;
-  -webkit-animation: load 1s ease-in-out infinite alternate;
-          animation: load 1s ease-in-out infinite alternate; }
-
-@-webkit-keyframes load {
-  0% {
-    -webkit-transform: rotate(-5deg) translate(-15px);
-            transform: rotate(-5deg) translate(-15px); }
-  100% {
-    -webkit-transform: rotate(5deg) translate(15px);
-            transform: rotate(5deg) translate(15px); } }
+  animation: load 1s ease-in-out infinite alternate; }
 
 @keyframes load {
   0% {
-    -webkit-transform: rotate(-5deg) translate(-15px);
-            transform: rotate(-5deg) translate(-15px); }
+    transform: rotate(-5deg) translate(-15px); }
   100% {
-    -webkit-transform: rotate(5deg) translate(15px);
-            transform: rotate(5deg) translate(15px); } }
+    transform: rotate(5deg) translate(15px); } }
+
+/*# sourceMappingURL=style.css.map */
