@@ -34,11 +34,20 @@ block content
                 else
                   img(alt='rating' src=`/images/yelp_stars/regular_${Math.floor(place.rating)}_half.png`).rating
         .moreInfo
-          a(href=place.phone).phone=place.display_phone
-          p.address
-          each line in place.location.display_address
-            span=line
+          if place.phone
+            a(href=place.phone).phone=place.display_phone
+          else
             br
+          p.address
+          - let x = 0
+          while x < 3
+            if place.location.display_address[x]
+              span=place.location.display_address[x]
+              br
+            else
+              br
+            - x++
+
 
   .voteButtons
     button#back.vote &lsaquo;

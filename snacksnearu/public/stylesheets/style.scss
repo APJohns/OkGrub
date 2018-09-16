@@ -2,6 +2,9 @@ $placePadding: 4%;
 $purple: rgba(94, 19, 104, 0.85);
 $blue: rgba(71, 135, 209, 0.85);
 
+p {
+  margin: 0;
+}
 
 body {
   margin: 0;
@@ -21,6 +24,7 @@ body {
 #index {
   position: relative;
   padding: $placePadding;
+  padding-top: 20%;
   text-align: center;
   background-color: rgba(226, 226, 226, 0.9);
   min-height: 100vh;
@@ -56,6 +60,16 @@ input[type='checkbox'] {
   background-color: $blue;
   color: #f8f8f8;
   cursor: pointer;
+  margin-top: 25px;
+
+  &:hover {
+    background-color: $purple;
+  }
+}
+
+input:focus, button:active {
+  box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.3);
+  transition: 0.1s all ease-in-out;
 }
 
 #btnSubmit:disabled, #btnSubmit[disabled] {
@@ -79,6 +93,7 @@ input, button {
   border: none;
   font-size: 1em;
   text-align: center;
+  transition: 0.1s all ease-in-out;
 }
 
 label {
@@ -174,11 +189,16 @@ label {
 .belowTitle {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 #distance {
   color: $blue;
   font-weight: bold;
+}
+
+.distance {
+  margin: 0;
 }
 
 .ratings {
@@ -287,8 +307,8 @@ label {
 #loader {
   box-sizing: border-box;
   position: absolute;
-  margin-left: -$placePadding;
-  margin-top: -$placePadding;
+  left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
   background-color: $purple;
