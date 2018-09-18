@@ -24,6 +24,7 @@
     "autoprefixer": "^9.1.5",
     "gulp": "^3.9.1",
     "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.1",
     "nodemon": "^1.17.3"
   }
 }
